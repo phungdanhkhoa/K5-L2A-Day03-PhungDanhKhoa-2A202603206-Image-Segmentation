@@ -46,7 +46,19 @@ Các quan sát và thao tác dưới đây do AI thực hiện, chờ học viê
 - Quy tắc và hành động sửa: dùng SAM với điểm âm trên giá đỡ, bỏ phần đỡ ngoài đường bao; giữ một instance xe máy. Theo yêu cầu `cp1_holes`, giữ kính và các khoảng nội bộ trong mask xe, không khoét lỗ tùy tiện. Gộp các mảnh của cùng phương tiện nền nếu model tách sai; trường hợp caravan cần xác nhận taxonomy ở mục 4.
 - Sau sửa: **đã lưu vào CVAT, đọc lại để đối chiếu, export lại `cp1_holes.zip` và kiểm giải mã RLE khớp mask đã lưu**.
 - Sửa thêm đã thực hiện: bỏ sidewalk giả trên dải chắn bê tông ảnh Easy cao tốc; bỏ nắp ca-pô xe camera khỏi `road`/`sidewalk` trong `cp4_curb`; bỏ xe buýt bị model gán thành `car` trong `cp6_coverage` vì schema không có `bus`.
-- Kết quả tự đánh giá với reference: **chưa có điểm**. Chưa tải/đọc ground truth. Việc kiểm metadata release chính thức bị giới hạn API, chưa xác nhận được reference khả dụng. Không tự ghi PASS, top 3 hay bonus. Scorecard ba tier nếu chạy được sau khi reference chính thức phát chỉ tối đa 82, không phải điểm cuối /100.
+- Kết quả tự đánh giá với reference: **46,3 / 82** cho ba tier, chấm ngày **11/11/2026** bằng mã chấm nguyên bản của repo. Học viên cung cấp `tiers_gt.zip` sau khi bản ZIP đã được push ở commit `706f7d12b44888b834572eeca6e95e0a89921124`; tám ảnh đầu vào trùng byte và schema khớp. Đây là điểm tự chấm theo file được cung cấp, chưa phải điểm coach xác nhận. Theo yêu cầu của học viên, **chỉ cập nhật báo cáo, không sửa mask/ZIP sau khi xem reference**.
+
+| Tier | Metric | Giá trị | Điểm tự chấm |
+| --- | --- | ---: | ---: |
+| Easy | mIoU | 0,7960 | 17,6 / 20 |
+| Medium | mean matched IoU × recall | 0,6313 | 16,4 / 32 |
+| Hard | PQ | 0,3849 | 12,3 / 30 |
+| **Tổng ba tier** | | | **46,3 / 82** |
+
+- Easy: IoU thấp nhất là sidewalk **0,6065**, tiếp theo vegetation **0,6900**; road **0,9535** và sky **0,9503** tốt hơn. Coverage theo pixel có nhãn của reference là **96,12%**.
+- Medium: mean matched IoU **0,7728**, precision@0.5 **76,32%**, recall@0.5 **81,69%**; **58 TP, 18 FP, 13 FN** trên 76 instance nộp so với 71 instance reference. FP/FN phản ánh kết quả ghép mask của scorer; có thể do biên, lớp hoặc tách/gộp sai, không chỉ do thừa/thiếu vật thật.
+- Hard: SQ **0,6496**, RQ **0,4883**. PQ sidewalk và bicycle **0**; person **0,107**, truck **0,192**, motorcycle **0,241**. Coverage cao và không chồng lấn vẫn đi kèm lỗi class/instance và vùng không khớp reference.
+- Chưa có ground truth cho sáu checkpoint nên **chưa tính được tổng /100**; không tự ghi PASS, top 3 hoặc bonus. [Scorecard và kết quả JSON](../evidence/reference-score/SCORECARD.md) chỉ chứa số liệu, không chứa mask đáp án. Ground truth giữ local và không đưa lên fork.
 
 ## 4. Ba ca chưa chắc hoặc đã cân nhắc
 

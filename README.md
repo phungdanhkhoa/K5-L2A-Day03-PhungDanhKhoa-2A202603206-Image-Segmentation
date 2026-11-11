@@ -5,7 +5,7 @@
 - [Báo cáo cá nhân](report/individual/2A202603206_PhungDanhKhoa.md) — ghi rõ AI hỗ trợ, lỗi đã sửa và ba ca cần kiểm lại.
 - [9 ZIP export từ CVAT](submissions/) — đủ 14 ảnh; đã kiểm cấu trúc và đối chiếu mask giải mã với dữ liệu lưu.
 - [Preview 14 ảnh để double-check](report/previews/README.md) · [Audit theo repo](report/REPO_AUDIT.md).
-- **Học viên tự kiểm lại và tự nộp link LMS; trợ lý chưa nộp LMS.** Chưa có điểm ground truth hoặc điểm chính thức.
+- **Học viên tự kiểm lại và tự nộp link LMS; trợ lý chưa nộp LMS.** Tự chấm ba tier bằng ground truth học viên cung cấp: **46,3/82**; [chi tiết](report/evidence/reference-score/SCORECARD.md). Chưa có điểm checkpoint hoặc điểm chính thức.
 
 ---
 
