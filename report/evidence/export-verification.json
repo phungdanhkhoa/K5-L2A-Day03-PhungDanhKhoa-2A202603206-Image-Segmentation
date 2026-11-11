@@ -1,0 +1,65 @@
+{
+  "easy_semantic": {
+    "images": 3,
+    "class_masks": 13,
+    "exact_export_mask_match": true,
+    "bytes": 100229,
+    "sha256": "62f4be5faad67dc0e157f56093238b2b6b640d75b4e99c170a8ce0bd89ab1a2b"
+  },
+  "medium_instance": {
+    "images": 3,
+    "annotations": 76,
+    "exact_export_mask_match": true,
+    "bytes": 54757,
+    "sha256": "7f46feaefa0766179da52b662caf4d6a650ca96ae5a38f4a144cdf4b5c6fdf75"
+  },
+  "hard_panoptic": {
+    "images": 2,
+    "annotations": 57,
+    "exact_export_mask_match": true,
+    "bytes": 71776,
+    "sha256": "7e9085b0588674713ea563d8a9168a09dcf52eec28fe72f41895a006e7b8e335"
+  },
+  "cp1_holes": {
+    "images": 1,
+    "annotations": 6,
+    "exact_export_mask_match": true,
+    "bytes": 14497,
+    "sha256": "d861cbc3f6cd40c11fbba1c2ca4d0587789a031c6ab4c098ef865eb1961546ed"
+  },
+  "cp2_slice": {
+    "images": 1,
+    "annotations": 18,
+    "exact_export_mask_match": true,
+    "bytes": 11723,
+    "sha256": "580b4318b8aec0c50578e0e63bb16fc23056f79414d6105325cda8f650aac482"
+  },
+  "cp5_occlusion": {
+    "images": 1,
+    "annotations": 34,
+    "exact_export_mask_match": true,
+    "bytes": 23365,
+    "sha256": "86dc6edf5527293c242a45259ffa4c6ad27efe5cf62597daa30445f685aaa7e4"
+  },
+  "cp3_thin": {
+    "images": 1,
+    "class_masks": 4,
+    "exact_export_mask_match": true,
+    "bytes": 38408,
+    "sha256": "ff71693141d87a462a918b0180f831c94d037b64209159e60ec300b4223b1087"
+  },
+  "cp4_curb": {
+    "images": 1,
+    "class_masks": 2,
+    "exact_export_mask_match": true,
+    "bytes": 20544,
+    "sha256": "83235a17dbf090332c5ae79e40e04aaf499423721590c86a817fb5ea430daa5d"
+  },
+  "cp6_coverage": {
+    "images": 1,
+    "class_masks": 6,
+    "exact_export_mask_match": true,
+    "bytes": 37971,
+    "sha256": "fc2075f93ef4b35c8802636c542a6c8c218adb8508be8ddcddd25f1ad08e8bc2"
+  }
+}
